@@ -1,0 +1,208 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,900&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+:root {
+  --bg-color: #201f1e;
+  --bg-color-hover: hsl(30, 3%, 25%);
+  --text-color: #ffffff;
+  --primaty-color: #0c8ce9;
+}
+
+body {
+  font-size: 16px;
+  height: 100vh;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+header {
+  grid-area: header;
+  background-image: url("./sandbox/imgs/header-bg-image.png");
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2em;
+}
+
+nav {
+  grid-area: nav;
+  padding: 3em 1em;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+}
+
+.logo {
+  display: block;
+  width: 45px;
+  height: 45px;
+}
+
+.header-nav {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+}
+
+.nav-item {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 0.8em;
+  margin-bottom: 1em;
+  width: 50%;
+  border-radius: 10px;
+  padding: 0.4em 0;
+  padding-left: 10px;
+}
+
+.nav-item a {
+  text-decoration: none;
+  color: var(--text-color);
+  font-size: 1.3rem;
+}
+.nav-item img {
+  width: 30px;
+  height: 30px;
+}
+
+.nav-item:hover {
+  background-color: var(--bg-color-hover);
+  cursor: pointer;
+}
+.nav-item:target {
+  background-color: var(--bg-color-hover);
+}
+
+.main-content {
+  grid-area: main-content;
+  padding: 3em 2em;
+}
+
+.main-content h1 {
+  font-weight: 600;
+}
+
+.main-content-tabs-container {
+  display: flex;
+  align-items: center;
+  padding: 0.3em 0;
+}
+
+.main-content-tab {
+  font-weight: 500;
+  font-size: 1.1em;
+  padding: 0.2em 0.6em;
+  border-radius: 0.4em;
+}
+
+.main-content-tab:hover {
+  background-color: #444;
+  cursor: pointer;
+}
+
+.club-cards-container > *:not(:last-child) {
+  margin-bottom: 0.8em;
+}
+
+.club-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-image: url("./sandbox/imgs/discoverClubsBackgrounds/JLM.png");
+  width: 90%;
+  border-radius: 10px;
+}
+
+.club-card .logo {
+  width: 5em;
+  height: 5em;
+  margin-left: 1em;
+}
+
+.card-content {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  padding: 0em 2em;
+}
+
+.card-details {
+  padding: 0.5em 0;
+}
+
+.card-details > *:not(:last-child) {
+  margin-bottom: 0.1em;
+}
+
+.card-title-section {
+  padding: 0.5em 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.card-title-section-header {
+  margin-bottom: 0.1em;
+}
+
+.card-title-section p {
+  font-weight: 400;
+  font-size: 1.1em;
+}
+
+.avatars-container img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 3px solid var(--primaty-color);
+}
+.avatars-container img + img {
+  margin-left: -13px;
+}
+
+.members-count {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.members-count p + p {
+  margin-left: 1em;
+}
+
+.card-details .btn-join {
+  width: 100%;
+  padding: 0.3em 0.6em;
+  border-radius: 5px;
+  color: white;
+  background-color: var(--primaty-color);
+}
+
+.card-details .btn-join {
+  cursor: pointer;
+}
+
+@media (min-width: 800px) {
+  body {
+    display: grid;
+    grid-template-areas:
+      "header header header"
+      "nav main-content  main-content";
+    grid-template-columns: 1fr 2fr 1.5fr;
+    grid-template-rows: 5em 1fr;
+  }
+
+  .club-card {
+    flex-direction: row;
+  }
+}
